@@ -1,0 +1,29 @@
+<h2>Campus Events</h2>
+<div class="main-container">
+  <form (ngSubmit)="editMode ? updateEvent() : addEvent()" class="form">
+    <input type="text" placeholder="Title" [(ngModel)]="newEvent.title" name="title" required />
+    <input type="date" [(ngModel)]="newEvent.date" name="date" required />
+    <input type="text" placeholder="Location" [(ngModel)]="newEvent.location" name="location" />
+    <textarea
+      placeholder="Description"
+      [(ngModel)]="newEvent.description"
+      name="description"
+    ></textarea>
+
+    <button type="submit">
+      {{ editMode ? 'Update Event' : 'Add Event' }}
+    </button>
+  </form>
+
+  <div class="container">
+    <div *ngFor="let e of events" class="event-card">
+      <h3>{{ e.title }}</h3>
+      <p>Date: {{ e.date }}</p>
+      <p>location: {{ e.location }}</p>
+      <p>Description: {{ e.description }}</p>
+
+      <button (click)="editEvent(e)">Edit</button>
+      <button (click)="deleteEvent(e.id)">Delete</button>
+    </div>
+  </div>
+</div>
