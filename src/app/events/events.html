@@ -1,4 +1,5 @@
 <h2>Campus Events</h2>
+<p></p>
 <div class="main-container">
   <form (ngSubmit)="editMode ? updateEvent() : addEvent()" class="form">
     <input type="text" placeholder="Title" [(ngModel)]="newEvent.title" name="title" required />
@@ -21,10 +22,11 @@
       <p>Date: {{ e.date }}</p>
       <p>location: {{ e.location }}</p>
       <p>Description: {{ e.description }}</p>
-
       <button (click)="editEvent(e)">Edit</button>
       <button (click)="deleteEvent(e.id)">Delete</button>
     </div>
   </div>
-  <h3>Test</h3>
+  <div>
+    <h3> New Text </h3>
+  </div>
 </div>
