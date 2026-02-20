@@ -1,6 +1,9 @@
 name: Angular Unit Tests
 
 on:
+  push:
+      branches:
+        - master
   pull_request:
     branches:
       - master
@@ -23,7 +26,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
+      
+      # Step 4: Install Angular CLI
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
 
-      # Step 4: Run Angular unit tests
+
+      # Step 5: Run Angular unit tests
       - name: Run unit tests with coverage
         run: ng test --watch=false --browsers=ChromeHeadless --code-coverage
