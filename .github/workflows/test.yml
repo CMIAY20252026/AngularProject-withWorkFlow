@@ -34,4 +34,4 @@ jobs:
 
       # Step 5: Run Angular unit tests
       - name: Run unit tests with coverage
-        run: ng test --watch=false --browsers=ChromeHeadless
+        run: npx ng test --watch=false --codeCoverage
