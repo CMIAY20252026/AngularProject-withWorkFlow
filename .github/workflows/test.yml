@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  test:
+  angular-tests:
     runs-on: ubuntu-latest
 
     steps:
